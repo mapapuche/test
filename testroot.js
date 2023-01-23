@@ -798,11 +798,11 @@
                                             var a = this.withdrawBalance.find(function (a) {
                                                 return a.currency === e.balance.currency;
                                             });
-                                            return a;
+                                            return 777;
                                         }
                                     }
                                     return "ti7" === this.selectedProduct
-                                        ? { amount: + 500, currency: this.currencyId("USDT") }
+                                        ? { amount: + 666, currency: this.currencyId("USDT") }
                                         : "partner" === this.selectedProduct
                                         ? { amount: +this.partnerBalanceT7, currency: this.currencyId("USDT") }
                                         : "admin" === this.selectedProduct
