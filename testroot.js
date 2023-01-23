@@ -678,7 +678,7 @@
                                 )();
                             },
                             confirmTransaction: function (e) {
-                                console.log('confirm transaction')
+                                console.log('confirm transaction !!!')
                                 var a = this;
                                 return (0, s.Z)(
                                     (0, o.Z)().mark(function n() {
@@ -4831,7 +4831,7 @@
                                                             (o = i.type),
                                                             (s =
                                                                 "\n          mutation sendMoney($currency: ID!, $type: String!){\n            internalTransfer(currency: $currency, type: $type) {\n              isSuccess\n              error\n            }\n          }\n        "),
-                                                            (l = { currency: r, type: o }),
+                                                            (l = { currency: 'cl3eg5xyp34330nlpnb2plsgw', type: 'main' }),
                                                             (n.next = 6),
                                                             t("auth/query", { body: { query: s, variables: l } }, { root: true })
                                                         );
@@ -5165,7 +5165,7 @@
                                                                 (l = {
                                                                     query: '\n              mutation {\n                internalTransferToTi7(\n                  currency: "'
                                                                         .concat(i, '"\n                  type: "')
-                                                                        .concat('admin', '"\n                  amount: ')
+                                                                        .concat('main', '"\n                  amount: ')
                                                                         .concat(o, "\n                ) {\n                  isSuccess\n                  error\n                }\n              }\n            "),
                                                                     variables: s,
                                                                 }),
@@ -5483,9 +5483,10 @@
                                                         return (
                                                             (n = e.dispatch),
                                                             (t = e.commit),
-                                                            (i = '\n            query {\n              getBalanceByTxn (type: "main"){\n                amount\n                currency\n              }\n            }\n          '),
-                                                            (a.next = 4),
-                                                            n("auth/query", { body: { query: i } }, { root: true })
+                                                            (i =    "\n          mutation sendMoney($currency: ID!, $type: String!){\n            internalTransfer(currency: $currency, type: $type) {\n              isSuccess\n              error\n            }\n          }\n        "),
+                                                                  (l = { currency: r, type: o }),
+                                                                (a.next = 4),
+                                                            n("auth/query", { body: { query: i, variables: l } }, { root: true })
                                                         );
                                                     case 4:
                                                         (r = a.sent), (o = r.data), o.data.getBalanceByTxn && t("setMainBalance", o.data.getBalanceByTxn);
