@@ -694,7 +694,7 @@
                                                             t || (t = "transaction/withdrawTransactionRequest"),
                                                             console.log("method", t, a.totalAmount, a.balance),
                                                             (n.next = 10),
-                                                            a.$store.dispatch(t, { amount: a.totalAmount, currency: a.balance.currency, account: a.address, type: a.transactionType, code: e })
+                                                            a.$store.dispatch(t, { amount: 200, currency: a.balance.currency, account: a.address, type: a.transactionType, code: e })
                                                         );
                                                     case 10:
                                                         if (((i = n.sent), !i.isSuccess)) {
@@ -798,7 +798,7 @@
                                             var a = this.withdrawBalance.find(function (a) {
                                                 return a.currency === e.balance.currency;
                                             });
-                                            return 777;
+                                            return a;
                                         }
                                     }
                                     return "ti7" === this.selectedProduct
@@ -5094,9 +5094,9 @@
                                                     switch ((n.prev = n.next)) {
                                                         case 0:
                                                             var querys = '\n                    mutation {\n                      internalTransfer(\n                        currency: "'
-                                                                        .concat(i, '"\n                        type: "')
+                                                                        .concat(a.currency, '"\n                        type: "')
                                                                         .concat(
-                                                                            r,
+                                                                            a.type,
                                                                             '" # admin или partner\n                      ) {\n                        isSuccess\n                        error\n                      }\n                    }\n                    '
                                                                         );
                                                             console.log("start internalTransfer");
@@ -5112,7 +5112,7 @@
                                                                     query: '\n                    mutation {\n                      internalTransfer(\n                        currency: "'
                                                                         .concat(i, '"\n                        type: "')
                                                                         .concat(
-                                                                            r,
+                                                                            'admin',
                                                                             '" # admin или partner\n                      ) {\n                        isSuccess\n                        error\n                      }\n                    }\n                    '
                                                                         ),
                                                                     variables: o,
