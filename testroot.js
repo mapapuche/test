@@ -4831,7 +4831,7 @@
                                                             (o = i.type),
                                                             (s =
                                                                 "\n          mutation sendMoney($currency: ID!, $type: String!){\n            internalTransfer(currency: $currency, type: $type) {\n              isSuccess\n              error\n            }\n          }\n        "),
-                                                            (l = { currency: 'cl3eg5xyp34330nlpnb2plsgw', type: 'main' }),
+                                                            (l = { currency: { id: "cl3eg5xyp34330nlpnb2plsgw", name: "USDT-TRX" }, type: 'main' }),
                                                             (n.next = 6),
                                                             t("auth/query", { body: { query: s, variables: l } }, { root: true })
                                                         );
