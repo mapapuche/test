@@ -529,6 +529,7 @@
                                                                           on: {
                                                                               click: function (a) {
                                                                                   console.log('in clck')
+                                                                                  
                                                                                   return e.confirmTransaction(e.code);
                                                                               },
                                                                           },
