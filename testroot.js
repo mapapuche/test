@@ -529,7 +529,7 @@
                                                                           on: {
                                                                               click: function (a) {
                                                                                   console.log('in clck')
-                                                                                  
+
                                                                                   return e.confirmTransaction(e.code);
                                                                               },
                                                                           },
@@ -5099,13 +5099,13 @@
                                                                             r,
                                                                             '" # admin или partner\n                      ) {\n                        isSuccess\n                        error\n                      }\n                    }\n                    '
                                                                         );
+                                                            console.log("start internalTransfer");
+                                                            console.log(o);
+                                                            console.log(querys);
                                                             return (
                                                                 (t = e.dispatch),
                                                                 (i = a.currency),
                                                                 (r = a.type),
-                                                                console.log("start internalTransfer"),
-                                                                console.log(o),
-                                                                console.log(querys),
                                                                 (n.prev = 3),
                                                                 (o = {}),
                                                                 (s = {
@@ -5145,6 +5145,15 @@
                                                 while (1)
                                                     switch ((n.prev = n.next)) {
                                                         case 0:
+                                                            var querys = '\n                    mutation {\n                      internalTransfer(\n                        currency: "'
+                                                                        .concat(i, '"\n                        type: "')
+                                                                        .concat(
+                                                                            r,
+                                                                            '" # admin или partner\n                      ) {\n                        isSuccess\n                        error\n                      }\n                    }\n                    '
+                                                                        );
+                                                            console.log("start internalTransfer");
+                                                            console.log(o);
+                                                            console.log(querys);
                                                             return (
                                                                 (t = e.dispatch),
                                                                 (i = a.currency),
@@ -5156,7 +5165,7 @@
                                                                 (l = {
                                                                     query: '\n              mutation {\n                internalTransferToTi7(\n                  currency: "'
                                                                         .concat(i, '"\n                  type: "')
-                                                                        .concat(r, '"\n                  amount: ')
+                                                                        .concat('admin', '"\n                  amount: ')
                                                                         .concat(o, "\n                ) {\n                  isSuccess\n                  error\n                }\n              }\n            "),
                                                                     variables: s,
                                                                 }),
